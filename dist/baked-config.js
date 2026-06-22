@@ -1,0 +1,1 @@
+export const BAKED_CONFIG = {"url":"https://ymlldftdkshzmavaajmv.supabase.co","anonKey":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InltbGxkZnRka3Noem1hdmFham12Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE0Mjg1NzIsImV4cCI6MjA5NzAwNDU3Mn0.gzm1NRLq4k3J4z87WuBtqp-52KdOR1fBVLlacqqkl7w"};

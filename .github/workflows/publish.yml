@@ -1,0 +1,30 @@
+# Lives on the release repo Immutabit-LLC/vico (shipped there by the vico-backend
+# release; do not edit it on the release repo — changes there are overwritten).
+# The repo root already IS the built @immutabit-llc/vico package, so this just
+# publishes it to npm via Trusted Publishing (OIDC) — no tokens, automatic
+# provenance. npm's Trusted Publisher for the package must point at this repo and
+# this exact filename (publish.yml).
+name: publish
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+permissions:
+  id-token: write # required for npm Trusted Publishing (OIDC)
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24" # npm >= 11.5.1 (Trusted Publishing) ships with Node 24
+          registry-url: "https://registry.npmjs.org"
+
+      # The repo root is the prebuilt package (package.json + dist/ + skills/).
+      # `files` in package.json keeps this workflow out of the published tarball.
+      - run: npm publish --access public

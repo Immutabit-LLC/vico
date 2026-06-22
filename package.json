@@ -1,0 +1,23 @@
+{
+  "name": "@immutabit-llc/vico",
+  "version": "0.5.7",
+  "private": false,
+  "license": "UNLICENSED",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Immutabit-LLC/vico.git"
+  },
+  "bin": {
+    "vico": "./dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.108.1"
+  }
+}
